@@ -1,4 +1,5 @@
 import { FormlyFieldConfig } from "@ngx-formly/core";
+import { combineLatest, map, merge, of } from "rxjs";
 import { BoostrapWrapperComponent } from "src/app/ui/wrappers/bootstrap-wrapper/bootstrap-wrapper.component";
 
 export const fields: FormlyFieldConfig[] = [
@@ -9,7 +10,46 @@ export const fields: FormlyFieldConfig[] = [
     props: {
       classes: ["row", "col-sm-6", "form-group"],
       label: "Field 1",
-      placeholder: "Formly is terrific!",
+      placeholder: "Name",
+    },
+  },
+  {
+    key: "surname",
+    type: "input",
+    wrappers: [BoostrapWrapperComponent],
+    props: {
+      classes: ["row", "col-sm-6", "form-group"],
+      label: "Field 1",
+      placeholder: "Surname",
+    },
+  },
+  {
+    key: "fullname",
+    type: "input",
+    wrappers: [BoostrapWrapperComponent],
+    props: {
+      classes: ["row", "col-sm-6", "form-group"],
+      label: "Field 1",
+      placeholder: "Full Name",
+      disabled: true,
+      async: true,
+      value$: of(null),
+    },
+    hooks: {
+      onInit: (field) => {
+        const name = field.form.get("name");
+        const surname = field.form.get("surname");
+
+        field.props.value$ = combineLatest([
+          merge(of(name.value), name.valueChanges),
+          merge(of(surname.value), surname.valueChanges),
+        ]).pipe(
+          map(([n, s]) => {
+            field.formControl.setValue(`${n} ${s ?? ""}`.trimEnd());
+            return true;
+          })
+        );
+      },
     },
   },
   {

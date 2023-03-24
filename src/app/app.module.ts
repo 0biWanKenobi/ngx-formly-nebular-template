@@ -1,13 +1,10 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-
-import { FormlyFieldInputModule } from "./ui/input/formly-field-input.module";
 import { AppComponent } from "./app.component";
-import { NbButtonModule, NbLayoutModule, NbThemeModule } from "@nebular/theme";
+import { NbThemeModule } from "@nebular/theme";
 import { FormlyModule } from "@ngx-formly/core";
-import { FormlyFieldSelectModule } from "./ui/select/formly-field-select.module";
 import { ColumnWrapperComponent } from "./ui/wrappers/column-wrapper.component";
-import { BootstrapWrapperModule } from "./ui/wrappers/bootstrap-wrapper/bootstrap-wrapper.module";
+import { FormModule } from "./pages/form/form.module";
 
 @NgModule({
   imports: [
@@ -18,11 +15,7 @@ import { BootstrapWrapperModule } from "./ui/wrappers/bootstrap-wrapper/bootstra
     FormlyModule.forRoot({
       wrappers: [{ name: "col", component: ColumnWrapperComponent }],
     }),
-    FormlyFieldInputModule,
-    FormlyFieldSelectModule,
-    BootstrapWrapperModule,
-    NbLayoutModule,
-    NbButtonModule,
+    FormModule,
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],

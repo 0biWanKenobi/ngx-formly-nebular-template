@@ -7,6 +7,7 @@ import { BootstrapWrapperModule } from "src/app/ui/wrappers/bootstrap-wrapper/bo
 import { ShowCaseFormComponent } from "./form.component";
 import { CommonModule } from "@angular/common";
 import { FormlyModule } from "@ngx-formly/core";
+import { DataService } from "src/app/service/service";
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { FormlyModule } from "@ngx-formly/core";
     NbButtonModule,
   ],
   declarations: [ShowCaseFormComponent],
+  providers: [DataService],
   exports: [ShowCaseFormComponent],
 })
 export class FormModule {}

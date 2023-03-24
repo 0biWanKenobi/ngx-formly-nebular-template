@@ -37,7 +37,5 @@ import { FieldWrapper } from "@ngx-formly/core";
   `,
 })
 export class BoostrapWrapperComponent extends FieldWrapper implements OnInit {
-  ngOnInit() {
-    console.log(this.props);
-  }
+  ngOnInit() {}
 }

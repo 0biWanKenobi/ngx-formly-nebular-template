@@ -1,10 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup } from "@angular/forms";
-import { FormlyFieldConfig } from "@ngx-formly/core";
 import { Observable } from "rxjs";
 import { DataService } from "src/app/service/service";
 import { DataModel } from "src/app/service/service.model";
-import { BoostrapWrapperComponent } from "../../ui/wrappers/bootstrap-wrapper/bootstrap-wrapper.component";
+import { fields } from "./form.fields";
 
 @Component({
   selector: "showcase-form",
@@ -31,31 +30,8 @@ import { BoostrapWrapperComponent } from "../../ui/wrappers/bootstrap-wrapper/bo
 })
 export class ShowCaseFormComponent implements OnInit {
   form = new FormGroup({});
+  fields = fields;
   model$: Observable<DataModel>;
-  fields: FormlyFieldConfig[] = [
-    {
-      key: "name",
-      type: "input",
-      wrappers: [BoostrapWrapperComponent],
-      props: {
-        classes: ["row", "col-sm-6", "form-group"],
-        label: "Field 1",
-        placeholder: "Formly is terrific!",
-      },
-    },
-    {
-      key: "role",
-      type: "select",
-      wrappers: [BoostrapWrapperComponent],
-      props: {
-        classes: ["row", "col-sm-6", "form-group"],
-        selectOpts: [
-          { label: "One", value: "one" },
-          { label: "Two", value: "two" },
-        ],
-      },
-    },
-  ];
 
   constructor(private dataService: DataService) {}
 

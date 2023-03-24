@@ -7,6 +7,7 @@ import { NbButtonModule, NbLayoutModule, NbThemeModule } from "@nebular/theme";
 import { FormlyModule } from "@ngx-formly/core";
 import { FormlyFieldSelectModule } from "./ui/select/formly-field-select.module";
 import { ColumnWrapperComponent } from "./ui/wrappers/column-wrapper.component";
+import { BootstrapWrapperModule } from "./ui/wrappers/bootstrap-wrapper/bootstrap-wrapper.module";
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { ColumnWrapperComponent } from "./ui/wrappers/column-wrapper.component";
     }),
     FormlyFieldInputModule,
     FormlyFieldSelectModule,
+    BootstrapWrapperModule,
     NbLayoutModule,
     NbButtonModule,
   ],

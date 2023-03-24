@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { FormGroup } from "@angular/forms";
 import { FormlyFieldConfig } from "@ngx-formly/core";
+import { BoostrapWrapperComponent } from "./ui/wrappers/bootstrap-wrapper/bootstrap-wrapper.component";
 
 @Component({
   selector: "my-app",
@@ -10,7 +11,9 @@ import { FormlyFieldConfig } from "@ngx-formly/core";
       <nb-layout-column>
         <form [formGroup]="form" (ngSubmit)="submit(model)">
           <formly-form [model]="model" [fields]="fields"> </formly-form>
-          <p><button nbButton status="primary" type="submit">Submit</button></p>
+          <div class="col-sm-6">
+            <button nbButton status="primary" type="submit">Submit</button>
+          </div>
         </form>
 
         {{ model | json }}
@@ -25,9 +28,23 @@ export class AppComponent {
     {
       key: "name",
       type: "input",
-      templateOptions: {
+      wrappers: [BoostrapWrapperComponent],
+      props: {
+        classes: ["row", "col-sm-6", "form-group"],
         label: "Field 1",
         placeholder: "Formly is terrific!",
+      },
+    },
+    {
+      key: "role",
+      type: "select",
+      wrappers: [BoostrapWrapperComponent],
+      props: {
+        classes: ["row", "col-sm-6", "form-group"],
+        selectOpts: [
+          { label: "One", value: "one" },
+          { label: "Two", value: "two" },
+        ],
       },
     },
   ];

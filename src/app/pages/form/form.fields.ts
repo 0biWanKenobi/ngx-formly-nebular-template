@@ -56,6 +56,11 @@ export const fields: FormlyFieldConfig[] = [
         key: "role",
         type: "select",
         className: "form-group col-3",
+        expressions: {
+          "props.disabled": (field) => {
+            return !field.form.get("roleEnabled").value;
+          },
+        },
         props: {
           selectOpts: [
             { label: "One", value: "one" },

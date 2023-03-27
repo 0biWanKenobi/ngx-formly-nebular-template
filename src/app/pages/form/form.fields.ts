@@ -1,5 +1,6 @@
 import { FormlyFieldConfig } from "@ngx-formly/core";
 import { combineLatest, map, merge, of } from "rxjs";
+import { FormlyFieldCheckboxComponent } from "src/app/ui/checkbox/formly-field-checkbox.component";
 import { BoostrapWrapperComponent } from "src/app/ui/wrappers/bootstrap-wrapper/bootstrap-wrapper.component";
 
 export const fields: FormlyFieldConfig[] = [
@@ -63,5 +64,15 @@ export const fields: FormlyFieldConfig[] = [
         { label: "Two", value: "two" },
       ],
     },
+      },
+      {
+        key: "roleEnabled",
+        id: "roleEnabled",
+        className: "form-group col-3",
+        type: FormlyFieldCheckboxComponent,
+        props: {
+          label: "Enable Role",
+          field: "roleEnabled",
+        },
   },
 ];

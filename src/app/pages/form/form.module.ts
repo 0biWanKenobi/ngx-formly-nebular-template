@@ -4,6 +4,7 @@ import { NbButtonModule, NbLayoutModule } from "@nebular/theme";
 import { FormlyModule } from "@ngx-formly/core";
 
 import { FormlyFieldInputModule } from "src/app/ui/input/formly-field-input.module";
+import { FormlyFieldCheckboxModule } from "src/app/ui/checkbox/formly-field-checkbox.module";
 import { FormlyFieldSelectModule } from "src/app/ui/select/formly-field-select.module";
 import { BootstrapWrapperModule } from "src/app/ui/wrappers/bootstrap-wrapper/bootstrap-wrapper.module";
 import { ShowCaseFormComponent } from "./form.component";
@@ -15,6 +16,7 @@ import { DataService } from "src/app/service/service";
     FormlyModule,
     FormlyFieldInputModule,
     FormlyFieldSelectModule,
+    FormlyFieldCheckboxModule,
     BootstrapWrapperModule,
     NbLayoutModule,
     NbButtonModule,

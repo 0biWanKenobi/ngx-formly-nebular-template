@@ -4,7 +4,11 @@ import { Component } from "@angular/core";
   selector: "my-app",
   template: `
     <ngx-layout>
-      <showcase-form></showcase-form>
+      <nb-card>
+        <nb-card-body>
+          <showcase-form></showcase-form>
+        </nb-card-body>
+      </nb-card>
     </ngx-layout>
   `,
 })

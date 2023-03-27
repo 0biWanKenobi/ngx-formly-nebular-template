@@ -5,6 +5,9 @@ import { BoostrapWrapperComponent } from "src/app/ui/wrappers/bootstrap-wrapper/
 
 export const fields: FormlyFieldConfig[] = [
   {
+    fieldGroupClassName: "form-row",
+    fieldGroup: [
+      {
     key: "name",
     type: "input",
     wrappers: [BoostrapWrapperComponent],
@@ -74,5 +77,7 @@ export const fields: FormlyFieldConfig[] = [
           label: "Enable Role",
           field: "roleEnabled",
         },
+      },
+    ],
   },
 ];

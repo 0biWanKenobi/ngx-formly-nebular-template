@@ -6,6 +6,7 @@ import { FieldType } from "@ngx-formly/core";
   template: `
     <nb-select
       type="text"
+      fullWidth
       [formControl]="formControl"
       [formlyAttributes]="field"
     >

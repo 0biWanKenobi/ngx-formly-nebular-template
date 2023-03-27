@@ -5,10 +5,12 @@ import { NbThemeModule } from "@nebular/theme";
 import { FormlyModule } from "@ngx-formly/core";
 import { ColumnWrapperComponent } from "./ui/wrappers/column-wrapper.component";
 import { FormModule } from "./pages/form/form.module";
+import { LayoutModule } from "./ui/layout/layout.module";
 
 @NgModule({
   imports: [
     BrowserModule,
+    LayoutModule,
     NbThemeModule.forRoot({
       name: "default",
     }),

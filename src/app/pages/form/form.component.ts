@@ -8,24 +8,19 @@ import { fields } from "./form.fields";
 @Component({
   selector: "showcase-form",
   template: `
-    <nb-layout>
-      <nb-layout-header> Formly Nebular Integration Demo </nb-layout-header>
-      <nb-layout-column>
-        <form
-          *ngIf="model$ | async as model; else loading"
-          [formGroup]="form"
-          (ngSubmit)="submit(model)"
-        >
-          <formly-form [model]="model" [fields]="fields"> </formly-form>
-          <div class="col-sm-6">
-            <button nbButton status="primary" type="submit">Submit</button>
-          </div>
-        </form>
-        <ng-template #loading> Form data incoming.. </ng-template>
+    <form
+      *ngIf="model$ | async as model; else loading"
+      [formGroup]="form"
+      (ngSubmit)="submit(model)"
+    >
+      <formly-form [model]="model" [fields]="fields"> </formly-form>
+      <div class="col-sm-6">
+        <button nbButton status="primary" type="submit">Submit</button>
+      </div>
+    </form>
+    <ng-template #loading> Form data incoming.. </ng-template>
 
-        {{ (model$ | async) ?? {} | json }}
-      </nb-layout-column>
-    </nb-layout>
+    {{ (model$ | async) ?? {} | json }}
   `,
 })
 export class ShowCaseFormComponent implements OnInit {

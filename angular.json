@@ -122,7 +122,6 @@
       }
     }
   },
-  "defaultProject": "ngx-formly-nebular",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "ngx",

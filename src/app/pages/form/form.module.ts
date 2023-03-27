@@ -9,11 +9,14 @@ import { FormlyFieldSelectModule } from "src/app/ui/select/formly-field-select.m
 import { BootstrapWrapperModule } from "src/app/ui/wrappers/bootstrap-wrapper/bootstrap-wrapper.module";
 import { ShowCaseFormComponent } from "./form.component";
 import { DataService } from "src/app/service/service";
+import { ColumnWrapperComponent } from "src/app/ui/wrappers/column-wrapper.component";
 
 @NgModule({
   imports: [
     CommonModule,
-    FormlyModule,
+    FormlyModule.forRoot({
+      wrappers: [{ name: "col", component: ColumnWrapperComponent }],
+    }),
     FormlyFieldInputModule,
     FormlyFieldSelectModule,
     FormlyFieldCheckboxModule,

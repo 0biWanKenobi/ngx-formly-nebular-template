@@ -11,7 +11,7 @@ export const fields: FormlyFieldConfig[] = [
         type: "input",
         className: "form-group col-6",
         props: {
-          label: "Field 1",
+          label: "Name",
           placeholder: "Name",
         },
       },
@@ -20,7 +20,7 @@ export const fields: FormlyFieldConfig[] = [
         type: "input",
         className: "form-group col-6",
         props: {
-          label: "Field 1",
+          label: "Surname",
           placeholder: "Surname",
         },
       },
@@ -29,7 +29,7 @@ export const fields: FormlyFieldConfig[] = [
         type: "input",
         className: "form-group col-6",
         props: {
-          label: "Field 1",
+          label: "Full Name",
           placeholder: "Full Name",
           disabled: true,
           async: true,
@@ -62,6 +62,7 @@ export const fields: FormlyFieldConfig[] = [
           },
         },
         props: {
+          label: "Role",
           selectOpts: [
             { label: "One", value: "one" },
             { label: "Two", value: "two" },

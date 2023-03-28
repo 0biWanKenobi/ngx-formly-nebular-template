@@ -4,6 +4,9 @@ import { FieldType } from "@ngx-formly/core";
 @Component({
   selector: "formly-field-select",
   template: `
+    <label class="label" *ngIf="props.label" [for]="id">{{
+      props.label
+    }}</label>
     <nb-select
       type="text"
       fullWidth

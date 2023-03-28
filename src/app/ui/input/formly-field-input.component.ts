@@ -43,8 +43,5 @@ export class FormlyFieldInputComponent extends FieldType implements OnInit {
     ]).pipe(map(([invalid, submitted]) => invalid && submitted));
 
     this.status$ = this.isInvalid$.pipe(map((i) => (i ? "danger" : "basic")));
-
-    // if (this.field.validators)
-    //   this.formControl.addValidators(this.field.validators.validation);
   }
 }

@@ -1,3 +1,4 @@
+import { FormControl } from "@angular/forms";
 import { FormlyFieldConfig } from "@ngx-formly/core";
 import { combineLatest, map, merge, of } from "rxjs";
 import { FormlyFieldCheckboxComponent } from "src/app/ui/checkbox/formly-field-checkbox.component";
@@ -23,6 +24,12 @@ export const fields: FormlyFieldConfig[] = [
           label: "Surname",
           placeholder: "Surname",
           required: true,
+        },
+        validators: {
+          minLength: {
+            expression: (control: FormControl) => control.value?.length > 3,
+            message: "Surname must be longer than 3 characters",
+          },
         },
       },
       {

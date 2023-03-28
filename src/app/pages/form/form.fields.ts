@@ -4,12 +4,12 @@ import { FormlyFieldCheckboxComponent } from "src/app/ui/checkbox/formly-field-c
 
 export const fields: FormlyFieldConfig[] = [
   {
-    fieldGroupClassName: "form-row",
+    fieldGroupClassName: "row",
     fieldGroup: [
       {
         key: "name",
         type: "input",
-        className: "form-group col-6",
+        className: "mb-3 col-6",
         props: {
           label: "Name",
           placeholder: "Name",
@@ -18,16 +18,17 @@ export const fields: FormlyFieldConfig[] = [
       {
         key: "surname",
         type: "input",
-        className: "form-group col-6",
+        className: "mb-3 col-6",
         props: {
           label: "Surname",
           placeholder: "Surname",
+          required: true,
         },
       },
       {
         key: "fullname",
         type: "input",
-        className: "form-group col-6",
+        className: "mb-3 col-6",
         props: {
           label: "Full Name",
           placeholder: "Full Name",
@@ -55,7 +56,7 @@ export const fields: FormlyFieldConfig[] = [
       {
         key: "role",
         type: "select",
-        className: "form-group col-3",
+        className: "mb-3 col-3",
         expressions: {
           "props.disabled": (field) => {
             return !field.form.get("roleEnabled").value;
@@ -72,7 +73,7 @@ export const fields: FormlyFieldConfig[] = [
       {
         key: "roleEnabled",
         id: "roleEnabled",
-        className: "form-group col-3",
+        className: "col-3 align-self-center",
         type: FormlyFieldCheckboxComponent,
         props: {
           label: "Enable Role",

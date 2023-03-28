@@ -6,13 +6,22 @@
 // framework component themes (styles tied to theme variables)
 @import "@nebular/theme/styles/globals";
 
+// bootstrap required
+
+// @import "bootstrap/scss/bootstrap";
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
-@import "bootstrap/scss/mixins";
 @import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+
+// bootstrap optionals
+
+@import "bootstrap/scss/utilities";
 @import "bootstrap/scss/grid";
+@import "bootstrap/scss/forms";
 
-
+@import "bootstrap/scss/utilities/api";
 
 @import "./layout";
 @import "./overrides";

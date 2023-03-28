@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup } from "@angular/forms";
-import { Observable } from "rxjs";
+import { FormlyFormOptions } from "@ngx-formly/core";
+import { BehaviorSubject, Observable } from "rxjs";
 import { DataService } from "src/app/service/service";
 import { DataModel } from "src/app/service/service.model";
 import { fields } from "./form.fields";
@@ -13,7 +14,8 @@ import { fields } from "./form.fields";
       [formGroup]="form"
       (ngSubmit)="submit(model)"
     >
-      <formly-form [model]="model" [fields]="fields"> </formly-form>
+      <formly-form [model]="model" [fields]="fields" [options]="options">
+      </formly-form>
       <div class="col-sm-6">
         <button nbButton status="primary" type="submit">Submit</button>
       </div>
@@ -27,6 +29,12 @@ export class ShowCaseFormComponent implements OnInit {
   form = new FormGroup({});
   fields = fields;
   model$: Observable<DataModel>;
+  submitted$ = new BehaviorSubject(false);
+  options: FormlyFormOptions = {
+    formState: {
+      submitted$: this.submitted$,
+    },
+  };
 
   constructor(private dataService: DataService) {}
 
@@ -35,6 +43,8 @@ export class ShowCaseFormComponent implements OnInit {
   }
 
   submit(model: DataModel) {
-    console.log(model);
+    this.submitted$.next(true);
+    if (this.form.valid) console.log(model);
+    else this.form.markAllAsTouched();
   }
 }

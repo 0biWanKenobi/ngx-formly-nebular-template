@@ -16,6 +16,9 @@ import { ColumnWrapperComponent } from "src/app/ui/wrappers/column-wrapper.compo
     CommonModule,
     FormlyModule.forRoot({
       wrappers: [{ name: "col", component: ColumnWrapperComponent }],
+      validationMessages: [
+        { name: "required", message: "This field is required" },
+      ],
     }),
     FormlyFieldInputModule,
     FormlyFieldSelectModule,
